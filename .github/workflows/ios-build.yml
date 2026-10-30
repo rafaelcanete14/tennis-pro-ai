@@ -1,0 +1,84 @@
+name: Build iOS IPA (iPhone 16 Pro Max)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-ipa:
+    name: Compile Release IPA for iPhone 16 Pro Max
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Select Latest Xcode (iOS 18+ SDK)
+        run: |
+          if ls -d /Applications/Xcode_*.app >/dev/null 2>&1; then
+            LATEST_XCODE=$(ls -d /Applications/Xcode_*.app | sort -V | tail -n 1)
+            sudo xcode-select -s "$LATEST_XCODE/Contents/Developer"
+          fi
+          xcodebuild -version
+          xcodebuild -showsdks
+
+      - name: Build Release App (iphoneos arm64)
+        run: |
+          xcodebuild build \
+            -project TennisProAI.xcodeproj \
+            -scheme TennisProAI \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData" \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Package TennisProAI-Unsigned.ipa
+        run: |
+          APP_PATH="$RUNNER_TEMP/DerivedData/Build/Products/Release-iphoneos/TennisProAI.app"
+          mkdir -p "$RUNNER_TEMP/ipa/Payload"
+          cp -R "$APP_PATH" "$RUNNER_TEMP/ipa/Payload/"
+          cd "$RUNNER_TEMP/ipa"
+          zip -qr "$GITHUB_WORKSPACE/TennisProAI-Unsigned.ipa" Payload
+          ls -lh "$GITHUB_WORKSPACE/TennisProAI-Unsigned.ipa"
+
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: TennisProAI-Unsigned-IPA
+          path: TennisProAI-Unsigned.ipa
+          if-no-files-found: error
+          retention-days: 30
+
+  unit-tests:
+    name: Run XCTest Suite (iOS Simulator)
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Select Latest Xcode (iOS 18+ SDK)
+        run: |
+          if ls -d /Applications/Xcode_*.app >/dev/null 2>&1; then
+            LATEST_XCODE=$(ls -d /Applications/Xcode_*.app | sort -V | tail -n 1)
+            sudo xcode-select -s "$LATEST_XCODE/Contents/Developer"
+          fi
+
+      - name: Execute Unit Tests
+        run: |
+          SIM_ID=$(xcrun simctl list devices available | grep -E "iPhone 16 Pro Max|iPhone 16|iPhone 15" | head -n 1 | grep -Eo '[0-9A-F]{8}-([0-9A-F]{4}-){3}[0-9A-F]{12}' || true)
+          if [ -z "$SIM_ID" ]; then
+            SIM_ID=$(xcrun simctl list devices available | grep "iPhone" | head -n 1 | grep -Eo '[0-9A-F]{8}-([0-9A-F]{4}-){3}[0-9A-F]{12}')
+          fi
+          echo "Testing on Simulator UDID: $SIM_ID"
+          xcodebuild test \
+            -project TennisProAI.xcodeproj \
+            -scheme TennisProAI \
+            -only-testing:TennisProAITests \
+            -destination "platform=iOS Simulator,id=$SIM_ID" \
+            CODE_SIGNING_ALLOWED=NO

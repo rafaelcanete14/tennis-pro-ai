@@ -1,0 +1,805 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		787B42C9F1DB758721C6ED67 /* AppNavigationRouter.swift */ = {isa = PBXBuildFile; fileRef = 6C0114B9AC28BB27E72F8433 /* AppNavigationRouter.swift */; };
+		5CA6F0E19371C461738B195B /* MainTabView.swift */ = {isa = PBXBuildFile; fileRef = 065B0235CC753C6FAF4D3060 /* MainTabView.swift */; };
+		98B5E6A5828A2DC6C80560CF /* TennisProAIApp.swift */ = {isa = PBXBuildFile; fileRef = 430808D02493363DBF610567 /* TennisProAIApp.swift */; };
+		08E23D380ED654FA07266356 /* DesignSystem.swift */ = {isa = PBXBuildFile; fileRef = 2E807CA376AFE37B5F146EBA /* DesignSystem.swift */; };
+		A6548E8514E63ECF8FF73A38 /* ReusableComponents.swift */ = {isa = PBXBuildFile; fileRef = B6AB71EF303363D11FAA37FB /* ReusableComponents.swift */; };
+		C4D6D790FE5DA1DCAD6DCA9C /* AIAnalysisModels.swift */ = {isa = PBXBuildFile; fileRef = 35F28420B7A0705C7CAD4808 /* AIAnalysisModels.swift */; };
+		D6DC9A1D8900331271F1BFCC /* DomainEnums.swift */ = {isa = PBXBuildFile; fileRef = 6FD24A36D9D01D95BF471417 /* DomainEnums.swift */; };
+		B8D4262828C4C4500C73DC4A /* MatchModels.swift */ = {isa = PBXBuildFile; fileRef = 4A4FCBD8FE8B79EC7A491862 /* MatchModels.swift */; };
+		E895023B7AFBB8358993CC85 /* PlayerProfile.swift */ = {isa = PBXBuildFile; fileRef = 36F0CF57777F63F9854B0118 /* PlayerProfile.swift */; };
+		F0258D41E696CC40D36E668E /* TrainingSession.swift */ = {isa = PBXBuildFile; fileRef = FC347FEF1338B7DD8AEEF680 /* TrainingSession.swift */; };
+		2C3D98F66610549F7368313E /* VideoModels.swift */ = {isa = PBXBuildFile; fileRef = 09E07C0E812C55C48C5689CA /* VideoModels.swift */; };
+		3DD34308DC11634F230571D8 /* DataBackupService.swift */ = {isa = PBXBuildFile; fileRef = F40499D35B2CE7478CDA2C71 /* DataBackupService.swift */; };
+		63E9A93BBE95B5CF6B556BF1 /* KeychainService.swift */ = {isa = PBXBuildFile; fileRef = 779126AEE1598B18005CE6A1 /* KeychainService.swift */; };
+		75084841D07358F474CE13D9 /* PersistenceController.swift */ = {isa = PBXBuildFile; fileRef = 3BD4249F8F68A592BEECD08D /* PersistenceController.swift */; };
+		145DBA4409D6012E856C6D80 /* SampleDataProvider.swift */ = {isa = PBXBuildFile; fileRef = F0F51FF702D2D1911270B159 /* SampleDataProvider.swift */; };
+		F85F568EE98AE45F804F7FD8 /* AIAnalysisService.swift */ = {isa = PBXBuildFile; fileRef = 38BA41E0F74CF37A423CEAA7 /* AIAnalysisService.swift */; };
+		D55C62ECAD3B438B448CFE13 /* CameraService.swift */ = {isa = PBXBuildFile; fileRef = CAF5F20D31C2055B887B8E37 /* CameraService.swift */; };
+		D6C7D59A1C5D24736B410C9D /* MatchScoringService.swift */ = {isa = PBXBuildFile; fileRef = CC28F40F4C3A03F99D57824B /* MatchScoringService.swift */; };
+		C9C520F330BF1C5AC382B35A /* StatisticsService.swift */ = {isa = PBXBuildFile; fileRef = 2C975917BCDE313D24D5D708 /* StatisticsService.swift */; };
+		4D0374F9993342AF9ADB733D /* VideoEditingService.swift */ = {isa = PBXBuildFile; fileRef = FD1BA269D120AD1BF6A5AE45 /* VideoEditingService.swift */; };
+		6E086F236987E98338D0E9BD /* VideoStorageService.swift */ = {isa = PBXBuildFile; fileRef = F2BBC3A6B7D9C475D6759385 /* VideoStorageService.swift */; };
+		6B6D9287E2C276C976854A59 /* AIAnalysisViewModel.swift */ = {isa = PBXBuildFile; fileRef = 8796E1510909D366DD80E7AB /* AIAnalysisViewModel.swift */; };
+		4BDCCD4BC1E64FEC1B4A7885 /* RecordingViewModel.swift */ = {isa = PBXBuildFile; fileRef = 00AAD62A5544171A21725971 /* RecordingViewModel.swift */; };
+		9063D18054B89C995EDD9629 /* ScorecardViewModel.swift */ = {isa = PBXBuildFile; fileRef = DA9595A735298F16B145DD09 /* ScorecardViewModel.swift */; };
+		3A6D5FA096C5104A0D881BE5 /* VideoEditorViewModel.swift */ = {isa = PBXBuildFile; fileRef = 09AD63EC6207CF500AB0BC15 /* VideoEditorViewModel.swift */; };
+		6653FEEF64FD2ADFB154301F /* VideoLibraryViewModel.swift */ = {isa = PBXBuildFile; fileRef = E1742DD862821FCE81988055 /* VideoLibraryViewModel.swift */; };
+		D6B11AB6A5534DE0757246C7 /* AIVideoAnalysisView.swift */ = {isa = PBXBuildFile; fileRef = 44D8081DF540458A1D66DA19 /* AIVideoAnalysisView.swift */; };
+		782EC5386EE14D7A0CC2CE3F /* DashboardView.swift */ = {isa = PBXBuildFile; fileRef = 7690F3FE644B66B376F3BF88 /* DashboardView.swift */; };
+		6954DEEBEAD8CE88D7FD54EA /* LiveScorecardView.swift */ = {isa = PBXBuildFile; fileRef = C05B82CF05143FFB9DCDC7AF /* LiveScorecardView.swift */; };
+		6C92AFF9DA80ED696DB073D8 /* MatchComparisonView.swift */ = {isa = PBXBuildFile; fileRef = 9EABFDE6B095815AFFD481C7 /* MatchComparisonView.swift */; };
+		587C12D4B84E0B68A306E369 /* MatchScorecardListView.swift */ = {isa = PBXBuildFile; fileRef = 0D6D4BC1CCF16592128FAE2B /* MatchScorecardListView.swift */; };
+		6473868544F40585A0BBCA0D /* MatchStatsEntryView.swift */ = {isa = PBXBuildFile; fileRef = 9127B76F5F36854E95E86536 /* MatchStatsEntryView.swift */; };
+		248F0DDE83613BBD5C47C7B5 /* OnboardingView.swift */ = {isa = PBXBuildFile; fileRef = D3E3AE9F530984073C99758C /* OnboardingView.swift */; };
+		61A5D66944E8511DE5E7EE6F /* ProfileView.swift */ = {isa = PBXBuildFile; fileRef = F1A69F80677E7DCAE515315B /* ProfileView.swift */; };
+		298E0DAAE98EB079F1F1DD87 /* CameraPreviewView.swift */ = {isa = PBXBuildFile; fileRef = 3BB8E18B70C211DC2575D60E /* CameraPreviewView.swift */; };
+		8A4ED5312AD9D6B882CF60DE /* RecordingView.swift */ = {isa = PBXBuildFile; fileRef = CDACA43E4B9A807DDC1A9DCC /* RecordingView.swift */; };
+		FAB036A4B6D5A0B7B36C2CFE /* StatisticsDashboardView.swift */ = {isa = PBXBuildFile; fileRef = 1168BD70DB7172D47601B150 /* StatisticsDashboardView.swift */; };
+		55EFB39A86A6D6F9EA464460 /* TrainingModeView.swift */ = {isa = PBXBuildFile; fileRef = 50373C72DCF6BF8503EDCAFE /* TrainingModeView.swift */; };
+		46646B8626C8B7FBAAEFA062 /* HighlightCollectionsView.swift */ = {isa = PBXBuildFile; fileRef = 7E13F7A5A0E5A2C93099924B /* HighlightCollectionsView.swift */; };
+		D71DFF5AC66C9C3C37225001 /* VideoEditorView.swift */ = {isa = PBXBuildFile; fileRef = ED6946EFC4168AB5ED904734 /* VideoEditorView.swift */; };
+		5F502B08F9CDAC3983F1B60D /* VideoDetailPlayerView.swift */ = {isa = PBXBuildFile; fileRef = 81DE4B93339A091947A99B5A /* VideoDetailPlayerView.swift */; };
+		168900BE70A660F53BFE9729 /* VideoLibraryView.swift */ = {isa = PBXBuildFile; fileRef = 676C3F7154A47503AB824CA3 /* VideoLibraryView.swift */; };
+		B289DC366E7C797D2FD49B85 /* Assets.xcassets */ = {isa = PBXBuildFile; fileRef = 1A6EB23C735FE63E1D0E6ACD /* Assets.xcassets */; };
+		7EEE015EAC29021AACE7449D /* PrivacyInfo.xcprivacy */ = {isa = PBXBuildFile; fileRef = 16D37C950FA2255BB7DAC6C2 /* PrivacyInfo.xcprivacy */; };
+		53B1B550A55909C010774C2F /* MatchScoringServiceTests.swift */ = {isa = PBXBuildFile; fileRef = CB19D44680D7D866ACADE6A1 /* MatchScoringServiceTests.swift */; };
+		5F7A056E6934819800C7E543 /* StatisticsServiceTests.swift */ = {isa = PBXBuildFile; fileRef = B1BB95AB5BD7C274714F291E /* StatisticsServiceTests.swift */; };
+		B60249A12F227FA00E36FCBD /* VideoAndPersistenceTests.swift */ = {isa = PBXBuildFile; fileRef = 6ACCD60F990B63678890674E /* VideoAndPersistenceTests.swift */; };
+		3592D70BB0CAFBD48010C480 /* TennisProAIUITests.swift */ = {isa = PBXBuildFile; fileRef = 3982317F6EF6C03441685686 /* TennisProAIUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A2055F7057313039F9C61EB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 809B7C3B41E3A328812DB376 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F678C36AC0D82E15575F07F;
+			remoteInfo = TennisProAI;
+		};
+		9E24AE557A397696DC7461FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 809B7C3B41E3A328812DB376 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F678C36AC0D82E15575F07F;
+			remoteInfo = TennisProAI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B75E57764A41AD31962DC1D2 /* TennisProAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisProAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81917F9CE28007A8F8AC1626 /* TennisProAITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TennisProAITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		16E64B3964DB31EAD27F36F7 /* TennisProAIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TennisProAIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C0114B9AC28BB27E72F8433 /* AppNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationRouter.swift; sourceTree = "<group>"; };
+		065B0235CC753C6FAF4D3060 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		430808D02493363DBF610567 /* TennisProAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisProAIApp.swift; sourceTree = "<group>"; };
+		2E807CA376AFE37B5F146EBA /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		B6AB71EF303363D11FAA37FB /* ReusableComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableComponents.swift; sourceTree = "<group>"; };
+		35F28420B7A0705C7CAD4808 /* AIAnalysisModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAnalysisModels.swift; sourceTree = "<group>"; };
+		6FD24A36D9D01D95BF471417 /* DomainEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainEnums.swift; sourceTree = "<group>"; };
+		4A4FCBD8FE8B79EC7A491862 /* MatchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchModels.swift; sourceTree = "<group>"; };
+		36F0CF57777F63F9854B0118 /* PlayerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfile.swift; sourceTree = "<group>"; };
+		FC347FEF1338B7DD8AEEF680 /* TrainingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSession.swift; sourceTree = "<group>"; };
+		09E07C0E812C55C48C5689CA /* VideoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModels.swift; sourceTree = "<group>"; };
+		F40499D35B2CE7478CDA2C71 /* DataBackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBackupService.swift; sourceTree = "<group>"; };
+		779126AEE1598B18005CE6A1 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		3BD4249F8F68A592BEECD08D /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		F0F51FF702D2D1911270B159 /* SampleDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataProvider.swift; sourceTree = "<group>"; };
+		1A6EB23C735FE63E1D0E6ACD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0DA4D2C19453711FB487D10F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16D37C950FA2255BB7DAC6C2 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		38BA41E0F74CF37A423CEAA7 /* AIAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAnalysisService.swift; sourceTree = "<group>"; };
+		CAF5F20D31C2055B887B8E37 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		CC28F40F4C3A03F99D57824B /* MatchScoringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchScoringService.swift; sourceTree = "<group>"; };
+		2C975917BCDE313D24D5D708 /* StatisticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsService.swift; sourceTree = "<group>"; };
+		FD1BA269D120AD1BF6A5AE45 /* VideoEditingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditingService.swift; sourceTree = "<group>"; };
+		F2BBC3A6B7D9C475D6759385 /* VideoStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStorageService.swift; sourceTree = "<group>"; };
+		8796E1510909D366DD80E7AB /* AIAnalysisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAnalysisViewModel.swift; sourceTree = "<group>"; };
+		00AAD62A5544171A21725971 /* RecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewModel.swift; sourceTree = "<group>"; };
+		DA9595A735298F16B145DD09 /* ScorecardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardViewModel.swift; sourceTree = "<group>"; };
+		09AD63EC6207CF500AB0BC15 /* VideoEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditorViewModel.swift; sourceTree = "<group>"; };
+		E1742DD862821FCE81988055 /* VideoLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryViewModel.swift; sourceTree = "<group>"; };
+		44D8081DF540458A1D66DA19 /* AIVideoAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIVideoAnalysisView.swift; sourceTree = "<group>"; };
+		7690F3FE644B66B376F3BF88 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		C05B82CF05143FFB9DCDC7AF /* LiveScorecardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScorecardView.swift; sourceTree = "<group>"; };
+		9EABFDE6B095815AFFD481C7 /* MatchComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchComparisonView.swift; sourceTree = "<group>"; };
+		0D6D4BC1CCF16592128FAE2B /* MatchScorecardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchScorecardListView.swift; sourceTree = "<group>"; };
+		9127B76F5F36854E95E86536 /* MatchStatsEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatsEntryView.swift; sourceTree = "<group>"; };
+		D3E3AE9F530984073C99758C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		F1A69F80677E7DCAE515315B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3BB8E18B70C211DC2575D60E /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		CDACA43E4B9A807DDC1A9DCC /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
+		1168BD70DB7172D47601B150 /* StatisticsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDashboardView.swift; sourceTree = "<group>"; };
+		50373C72DCF6BF8503EDCAFE /* TrainingModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingModeView.swift; sourceTree = "<group>"; };
+		7E13F7A5A0E5A2C93099924B /* HighlightCollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightCollectionsView.swift; sourceTree = "<group>"; };
+		ED6946EFC4168AB5ED904734 /* VideoEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditorView.swift; sourceTree = "<group>"; };
+		81DE4B93339A091947A99B5A /* VideoDetailPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailPlayerView.swift; sourceTree = "<group>"; };
+		676C3F7154A47503AB824CA3 /* VideoLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryView.swift; sourceTree = "<group>"; };
+		CB19D44680D7D866ACADE6A1 /* MatchScoringServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchScoringServiceTests.swift; sourceTree = "<group>"; };
+		B1BB95AB5BD7C274714F291E /* StatisticsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsServiceTests.swift; sourceTree = "<group>"; };
+		6ACCD60F990B63678890674E /* VideoAndPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAndPersistenceTests.swift; sourceTree = "<group>"; };
+		3982317F6EF6C03441685686 /* TennisProAIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisProAIUITests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBF5EE15FFC2DC1394881FEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFA686BE1D7B8AA8C6A6973A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2810DF03759229DA4F8690D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C2CCC34B7CD2284BC1F041E5 = {
+			isa = PBXGroup;
+			children = (
+				5414EAE518C515B929A51AD1 /* TennisProAI */,
+				84B12F87376BC8A5D28CA68B /* TennisProAITests */,
+				BFBA72BD3025FC9CD0211DFD /* TennisProAIUITests */,
+				C4E1BA22244072B6948DC015 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4E1BA22244072B6948DC015 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B75E57764A41AD31962DC1D2 /* TennisProAI.app */,
+				81917F9CE28007A8F8AC1626 /* TennisProAITests.xctest */,
+				16E64B3964DB31EAD27F36F7 /* TennisProAIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4746906A76D8EFF4F92A8504 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6C0114B9AC28BB27E72F8433,
+				065B0235CC753C6FAF4D3060,
+				430808D02493363DBF610567,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7A8FB7AFD1C969CFC8F10624 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2E807CA376AFE37B5F146EBA,
+				B6AB71EF303363D11FAA37FB,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9AF3952AFB3FC340DE4899C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				35F28420B7A0705C7CAD4808,
+				6FD24A36D9D01D95BF471417,
+				4A4FCBD8FE8B79EC7A491862,
+				36F0CF57777F63F9854B0118,
+				FC347FEF1338B7DD8AEEF680,
+				09E07C0E812C55C48C5689CA,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EC9311EA0D358D8791B36AFB /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				F40499D35B2CE7478CDA2C71,
+				779126AEE1598B18005CE6A1,
+				3BD4249F8F68A592BEECD08D,
+				F0F51FF702D2D1911270B159,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		DF9D003CDB442C682BECBA77 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1A6EB23C735FE63E1D0E6ACD,
+				0DA4D2C19453711FB487D10F,
+				16D37C950FA2255BB7DAC6C2,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C5E4775F0DC2C15B94E60BBA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				38BA41E0F74CF37A423CEAA7,
+				CAF5F20D31C2055B887B8E37,
+				CC28F40F4C3A03F99D57824B,
+				2C975917BCDE313D24D5D708,
+				FD1BA269D120AD1BF6A5AE45,
+				F2BBC3A6B7D9C475D6759385,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FF0A2667137DE4BBE8437134 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8796E1510909D366DD80E7AB,
+				00AAD62A5544171A21725971,
+				DA9595A735298F16B145DD09,
+				09AD63EC6207CF500AB0BC15,
+				E1742DD862821FCE81988055,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1989570CD44B78FF5D32660B /* AIAnalysis */ = {
+			isa = PBXGroup;
+			children = (
+				44D8081DF540458A1D66DA19,
+			);
+			path = AIAnalysis;
+			sourceTree = "<group>";
+		};
+		E7BE39C41C7474598AC0FD25 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				7690F3FE644B66B376F3BF88,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		F13FF865B35FF477219D5DD8 /* MatchScorecard */ = {
+			isa = PBXGroup;
+			children = (
+				C05B82CF05143FFB9DCDC7AF,
+				9EABFDE6B095815AFFD481C7,
+				0D6D4BC1CCF16592128FAE2B,
+				9127B76F5F36854E95E86536,
+			);
+			path = MatchScorecard;
+			sourceTree = "<group>";
+		};
+		595AED44797D0EA40414E049 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D3E3AE9F530984073C99758C,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		55D93820849618E1A880870C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F1A69F80677E7DCAE515315B,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		13280842F184BD69AC109099 /* Recording */ = {
+			isa = PBXGroup;
+			children = (
+				3BB8E18B70C211DC2575D60E,
+				CDACA43E4B9A807DDC1A9DCC,
+			);
+			path = Recording;
+			sourceTree = "<group>";
+		};
+		C82C6FF235FFBBEB408CBD76 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				1168BD70DB7172D47601B150,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		48B2AB1F55338DEF396FFB30 /* Training */ = {
+			isa = PBXGroup;
+			children = (
+				50373C72DCF6BF8503EDCAFE,
+			);
+			path = Training;
+			sourceTree = "<group>";
+		};
+		EE170B18318E7F37D03EF4AA /* VideoEditor */ = {
+			isa = PBXGroup;
+			children = (
+				7E13F7A5A0E5A2C93099924B,
+				ED6946EFC4168AB5ED904734,
+			);
+			path = VideoEditor;
+			sourceTree = "<group>";
+		};
+		F7CC0B771E29CB3269D4A583 /* VideoLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				81DE4B93339A091947A99B5A,
+				676C3F7154A47503AB824CA3,
+			);
+			path = VideoLibrary;
+			sourceTree = "<group>";
+		};
+		5EA0D360CDB4D43CE178082E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1989570CD44B78FF5D32660B,
+				E7BE39C41C7474598AC0FD25,
+				F13FF865B35FF477219D5DD8,
+				595AED44797D0EA40414E049,
+				55D93820849618E1A880870C,
+				13280842F184BD69AC109099,
+				C82C6FF235FFBBEB408CBD76,
+				48B2AB1F55338DEF396FFB30,
+				EE170B18318E7F37D03EF4AA,
+				F7CC0B771E29CB3269D4A583,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5414EAE518C515B929A51AD1 /* TennisProAI */ = {
+			isa = PBXGroup;
+			children = (
+				4746906A76D8EFF4F92A8504,
+				7A8FB7AFD1C969CFC8F10624,
+				9AF3952AFB3FC340DE4899C0,
+				EC9311EA0D358D8791B36AFB,
+				DF9D003CDB442C682BECBA77,
+				C5E4775F0DC2C15B94E60BBA,
+				FF0A2667137DE4BBE8437134,
+				5EA0D360CDB4D43CE178082E,
+			);
+			path = TennisProAI;
+			sourceTree = "<group>";
+		};
+		84B12F87376BC8A5D28CA68B /* TennisProAITests */ = {
+			isa = PBXGroup;
+			children = (
+				CB19D44680D7D866ACADE6A1,
+				B1BB95AB5BD7C274714F291E,
+				6ACCD60F990B63678890674E,
+			);
+			path = TennisProAITests;
+			sourceTree = "<group>";
+		};
+		BFBA72BD3025FC9CD0211DFD /* TennisProAIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3982317F6EF6C03441685686,
+			);
+			path = TennisProAIUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F678C36AC0D82E15575F07F /* TennisProAI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D52145B62C04118D6D898F5 /* Build configuration list for PBXNativeTarget "TennisProAI" */;
+			buildPhases = (
+				35781B7464F55F746437ECCE /* Sources */,
+				FBF5EE15FFC2DC1394881FEE /* Frameworks */,
+				8BA52B68C42AF7BB94F64B50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TennisProAI;
+			productName = TennisProAI;
+			productReference = B75E57764A41AD31962DC1D2 /* TennisProAI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		19182C83607782689EADC3C7 /* TennisProAITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F86628E0BD3F93360732EB8E /* Build configuration list for PBXNativeTarget "TennisProAITests" */;
+			buildPhases = (
+				E13CD5FA648200E81F84C11C /* Sources */,
+				BFA686BE1D7B8AA8C6A6973A /* Frameworks */,
+				E7205BC01D029A2AD0B5B06D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A98C413481A6A42AA7CD580 /* PBXTargetDependency */,
+			);
+			name = TennisProAITests;
+			productName = TennisProAITests;
+			productReference = 81917F9CE28007A8F8AC1626 /* TennisProAITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6DA953690A8E3713E565231A /* TennisProAIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EEABF1209EE695CE5C8F182 /* Build configuration list for PBXNativeTarget "TennisProAIUITests" */;
+			buildPhases = (
+				059B42F46AA283495AB8EA51 /* Sources */,
+				E2810DF03759229DA4F8690D /* Frameworks */,
+				457C70FECC9E24EDC4B62324 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C05799F9C484668C2FD44BBC /* PBXTargetDependency */,
+			);
+			name = TennisProAIUITests;
+			productName = TennisProAIUITests;
+			productReference = 16E64B3964DB31EAD27F36F7 /* TennisProAIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		809B7C3B41E3A328812DB376 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					8F678C36AC0D82E15575F07F = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					19182C83607782689EADC3C7 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 8F678C36AC0D82E15575F07F;
+					};
+					6DA953690A8E3713E565231A = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 8F678C36AC0D82E15575F07F;
+					};
+				};
+			};
+			buildConfigurationList = 14106D35A17AD4574F55E1ED /* Build configuration list for PBXProject "TennisProAI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C2CCC34B7CD2284BC1F041E5;
+			productRefGroup = C4E1BA22244072B6948DC015 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F678C36AC0D82E15575F07F /* TennisProAI */,
+				19182C83607782689EADC3C7 /* TennisProAITests */,
+				6DA953690A8E3713E565231A /* TennisProAIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8BA52B68C42AF7BB94F64B50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B289DC366E7C797D2FD49B85 /* Assets.xcassets */,
+				7EEE015EAC29021AACE7449D /* PrivacyInfo.xcprivacy */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7205BC01D029A2AD0B5B06D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		457C70FECC9E24EDC4B62324 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		35781B7464F55F746437ECCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				787B42C9F1DB758721C6ED67 /* AppNavigationRouter.swift */,
+				5CA6F0E19371C461738B195B /* MainTabView.swift */,
+				98B5E6A5828A2DC6C80560CF /* TennisProAIApp.swift */,
+				08E23D380ED654FA07266356 /* DesignSystem.swift */,
+				A6548E8514E63ECF8FF73A38 /* ReusableComponents.swift */,
+				C4D6D790FE5DA1DCAD6DCA9C /* AIAnalysisModels.swift */,
+				D6DC9A1D8900331271F1BFCC /* DomainEnums.swift */,
+				B8D4262828C4C4500C73DC4A /* MatchModels.swift */,
+				E895023B7AFBB8358993CC85 /* PlayerProfile.swift */,
+				F0258D41E696CC40D36E668E /* TrainingSession.swift */,
+				2C3D98F66610549F7368313E /* VideoModels.swift */,
+				3DD34308DC11634F230571D8 /* DataBackupService.swift */,
+				63E9A93BBE95B5CF6B556BF1 /* KeychainService.swift */,
+				75084841D07358F474CE13D9 /* PersistenceController.swift */,
+				145DBA4409D6012E856C6D80 /* SampleDataProvider.swift */,
+				F85F568EE98AE45F804F7FD8 /* AIAnalysisService.swift */,
+				D55C62ECAD3B438B448CFE13 /* CameraService.swift */,
+				D6C7D59A1C5D24736B410C9D /* MatchScoringService.swift */,
+				C9C520F330BF1C5AC382B35A /* StatisticsService.swift */,
+				4D0374F9993342AF9ADB733D /* VideoEditingService.swift */,
+				6E086F236987E98338D0E9BD /* VideoStorageService.swift */,
+				6B6D9287E2C276C976854A59 /* AIAnalysisViewModel.swift */,
+				4BDCCD4BC1E64FEC1B4A7885 /* RecordingViewModel.swift */,
+				9063D18054B89C995EDD9629 /* ScorecardViewModel.swift */,
+				3A6D5FA096C5104A0D881BE5 /* VideoEditorViewModel.swift */,
+				6653FEEF64FD2ADFB154301F /* VideoLibraryViewModel.swift */,
+				D6B11AB6A5534DE0757246C7 /* AIVideoAnalysisView.swift */,
+				782EC5386EE14D7A0CC2CE3F /* DashboardView.swift */,
+				6954DEEBEAD8CE88D7FD54EA /* LiveScorecardView.swift */,
+				6C92AFF9DA80ED696DB073D8 /* MatchComparisonView.swift */,
+				587C12D4B84E0B68A306E369 /* MatchScorecardListView.swift */,
+				6473868544F40585A0BBCA0D /* MatchStatsEntryView.swift */,
+				248F0DDE83613BBD5C47C7B5 /* OnboardingView.swift */,
+				61A5D66944E8511DE5E7EE6F /* ProfileView.swift */,
+				298E0DAAE98EB079F1F1DD87 /* CameraPreviewView.swift */,
+				8A4ED5312AD9D6B882CF60DE /* RecordingView.swift */,
+				FAB036A4B6D5A0B7B36C2CFE /* StatisticsDashboardView.swift */,
+				55EFB39A86A6D6F9EA464460 /* TrainingModeView.swift */,
+				46646B8626C8B7FBAAEFA062 /* HighlightCollectionsView.swift */,
+				D71DFF5AC66C9C3C37225001 /* VideoEditorView.swift */,
+				5F502B08F9CDAC3983F1B60D /* VideoDetailPlayerView.swift */,
+				168900BE70A660F53BFE9729 /* VideoLibraryView.swift */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E13CD5FA648200E81F84C11C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53B1B550A55909C010774C2F /* MatchScoringServiceTests.swift */,
+				5F7A056E6934819800C7E543 /* StatisticsServiceTests.swift */,
+				B60249A12F227FA00E36FCBD /* VideoAndPersistenceTests.swift */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		059B42F46AA283495AB8EA51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3592D70BB0CAFBD48010C480 /* TennisProAIUITests.swift */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A98C413481A6A42AA7CD580 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F678C36AC0D82E15575F07F /* TennisProAI */;
+			targetProxy = A2055F7057313039F9C61EB3 /* PBXContainerItemProxy */;
+		};
+		C05799F9C484668C2FD44BBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F678C36AC0D82E15575F07F /* TennisProAI */;
+			targetProxy = 9E24AE557A397696DC7461FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D8A045AC7ECE0993B1DA2CCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D59C3432DC46498E98046531 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D3E4ED352C38A02B3616D82F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TennisProAI/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tennisproai.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5021DB296FEAD9339D594CDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TennisProAI/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tennisproai.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		24AE14634A2A1F697D1E36DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tennisproai.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TennisProAI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TennisProAI";
+			};
+			name = Debug;
+		};
+		01D24D1A25070500EBB1E09E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tennisproai.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TennisProAI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TennisProAI";
+			};
+			name = Release;
+		};
+		3E62B7AA7D6402B100B1F616 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tennisproai.app.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = TennisProAI;
+			};
+			name = Debug;
+		};
+		F681BB26FDA2CEC10A880F78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tennisproai.app.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = TennisProAI;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14106D35A17AD4574F55E1ED /* Build configuration list for PBXProject "TennisProAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8A045AC7ECE0993B1DA2CCD /* Debug */,
+				D59C3432DC46498E98046531 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D52145B62C04118D6D898F5 /* Build configuration list for PBXNativeTarget "TennisProAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3E4ED352C38A02B3616D82F /* Debug */,
+				5021DB296FEAD9339D594CDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F86628E0BD3F93360732EB8E /* Build configuration list for PBXNativeTarget "TennisProAITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24AE14634A2A1F697D1E36DE /* Debug */,
+				01D24D1A25070500EBB1E09E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EEABF1209EE695CE5C8F182 /* Build configuration list for PBXNativeTarget "TennisProAIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E62B7AA7D6402B100B1F616 /* Debug */,
+				F681BB26FDA2CEC10A880F78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 809B7C3B41E3A328812DB376 /* Project object */;
+}
