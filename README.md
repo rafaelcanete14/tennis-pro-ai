@@ -110,3 +110,5 @@ Per strict engineering integrity requirements, Tennis Pro AI **never fabricates 
 - **Custom Stroke Classification ML Model Not Bundled:** Apple's built-in `Vision` framework provides genuine human detection, 2D skeletal body pose landmarks, joint angles, and movement burst segmentation, but does not natively classify tennis shot types (e.g., distinguishing a forehand winner from a backhand unforced error). Automatic shot classification requires supplying a trained Core ML Action Classifier via `StrokeClassifierModelProtocol`; until provided, shot categories are assigned manually during highlight review.
 - **Background Recording:** Per iOS platform restrictions, `AVCaptureMovieFileOutput` cannot continue recording video if the user locks the iPhone hardware power button or switches to another foreground app. Use the built-in **Tripod Power-Saver Dimmer** inside the Record screen to dim the OLED display while keeping the app active in the foreground.
 
+#   t e n n i s - p r o - a i  
+ 
