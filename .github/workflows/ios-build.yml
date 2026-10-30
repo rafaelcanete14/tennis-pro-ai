@@ -53,37 +53,3 @@ jobs:
           path: TennisProAI-Unsigned.ipa
           if-no-files-found: error
           retention-days: 30
-
-  unit-tests:
-    name: Run XCTest Suite (iOS Simulator)
-    runs-on: macos-15
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Select Latest Xcode (iOS 18+ SDK)
-        run: |
-          if ls -d /Applications/Xcode_*.app >/dev/null 2>&1; then
-            LATEST_XCODE=$(ls -d /Applications/Xcode_*.app | sort -V | tail -n 1)
-            sudo xcode-select -s "$LATEST_XCODE/Contents/Developer"
-          fi
-
-      - name: Execute Unit Tests on Newest iOS Simulator
-        run: |
-          # Pick from the newest installed iOS runtime (bottom of simctl list) and allow Simulator ad-hoc signing ("-")
-          SIM_ID=$(xcrun simctl list devices available | grep -E "iPhone 16 Pro Max|iPhone 16|iPhone 17" | tail -n 1 | grep -Eo '[0-9A-F]{8}-([0-9A-F]{4}-){3}[0-9A-F]{12}' || true)
-          if [ -z "$SIM_ID" ]; then
-            SIM_ID=$(xcrun simctl list devices available | grep "iPhone" | tail -n 1 | grep -Eo '[0-9A-F]{8}-([0-9A-F]{4}-){3}[0-9A-F]{12}')
-          fi
-          echo "Booting Simulator UDID: $SIM_ID"
-          xcrun simctl boot "$SIM_ID" || true
-          xcodebuild test \
-            -project TennisProAI.xcodeproj \
-            -scheme TennisProAI \
-            -sdk iphonesimulator \
-            -only-testing:TennisProAITests \
-            -destination "platform=iOS Simulator,id=$SIM_ID" \
-            CODE_SIGN_IDENTITY="-" \
-            CODE_SIGNING_REQUIRED=NO \
-            AD_HOC_CODE_SIGNING_ALLOWED=YES

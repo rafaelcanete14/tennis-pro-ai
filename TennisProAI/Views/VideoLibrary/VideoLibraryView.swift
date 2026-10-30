@@ -1,5 +1,7 @@
 import SwiftUI
 import SwiftData
+import PhotosUI
+import UniformTypeIdentifiers
 
 struct VideoLibraryView: View {
     @Environment(AppNavigationRouter.self) private var router
@@ -9,6 +11,9 @@ struct VideoLibraryView: View {
 
     @State private var viewModel = VideoLibraryViewModel()
     @State private var showHighlightCollections = false
+    @State private var selectedPhotoPickerItems: [PhotosPickerItem] = []
+    @State private var showPhotosPicker = false
+    @State private var showFileImporter = false
 
     private var displayedRecordings: [VideoRecording] {
         viewModel.filteredRecordings(recordings)
@@ -18,6 +23,26 @@ struct VideoLibraryView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: AppSpacing.md) {
+                    // Prominent Courtside Import Action Row
+                    importActionsBar
+
+                    if viewModel.isImportingVideo {
+                        CourtCard(padding: 14) {
+                            HStack(spacing: 12) {
+                                ProgressView()
+                                    .tint(AppTheme.opticLime)
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(viewModel.importStatusLabel)
+                                        .font(.subheadline.weight(.bold))
+                                    Text("Copying locally & generating thumbnail...")
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                }
+                                Spacer()
+                            }
+                        }
+                    }
+
                     // Highlight Collections Banner
                     Button {
                         showHighlightCollections = true
@@ -75,7 +100,7 @@ struct VideoLibraryView: View {
                         EmptyStateCardView(
                             icon: "film.stack",
                             title: "Your Video Library Is Empty",
-                            message: "Record matches or practice drills from the Record tab to review strokes, trim highlight clips, and run Vision analysis.",
+                            message: "Import an existing match video from Photos or Files above, or record a new session from the Record tab to trim highlights and run Vision analysis.",
                             buttonTitle: "Start Court Recording",
                             buttonIcon: "video.badge.plus"
                         ) {
@@ -114,6 +139,31 @@ struct VideoLibraryView: View {
             .navigationTitle("Video Library")
             .searchable(text: $viewModel.searchQuery, prompt: "Search by name, tag, or note")
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Menu {
+                        Button {
+                            showPhotosPicker = true
+                        } label: {
+                            Label("Import from Photos", systemImage: "photo.on.rectangle.angled")
+                        }
+
+                        Button {
+                            showFileImporter = true
+                        } label: {
+                            Label("Import from Files / USB Drive", systemImage: "folder.badge.plus")
+                        }
+                    } label: {
+                        HStack(spacing: 5) {
+                            Image(systemName: "square.and.arrow.down")
+                            Text("Import")
+                                .fontWeight(.bold)
+                        }
+                        .foregroundStyle(AppTheme.courtGreen)
+                    }
+                    .disabled(viewModel.isImportingVideo)
+                    .accessibilityIdentifier("library.toolbarImportMenu")
+                }
+
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {
                         Picker("Sort By", selection: $viewModel.sortOption) {
@@ -124,6 +174,34 @@ struct VideoLibraryView: View {
                     } label: {
                         Label("Sort", systemImage: "arrow.up.arrow.down.circle")
                     }
+                }
+            }
+            .photosPicker(
+                isPresented: $showPhotosPicker,
+                selection: $selectedPhotoPickerItems,
+                maxSelectionCount: 5,
+                matching: .videos
+            )
+            .onChange(of: selectedPhotoPickerItems) { _, newItems in
+                guard !newItems.isEmpty else { return }
+                let itemsToImport = newItems
+                selectedPhotoPickerItems = []
+                Task {
+                    await viewModel.importPhotosPickerItems(itemsToImport, in: modelContext)
+                }
+            }
+            .fileImporter(
+                isPresented: $showFileImporter,
+                allowedContentTypes: [.movie, .mpeg4Movie, .quickTimeMovie],
+                allowsMultipleSelection: true
+            ) { result in
+                switch result {
+                case .success(let urls):
+                    Task {
+                        await viewModel.importFilesFromURLs(urls, in: modelContext)
+                    }
+                case .failure(let error):
+                    viewModel.errorMessage = "File selection failed: \(error.localizedDescription)"
                 }
             }
             .navigationDestination(isPresented: $showHighlightCollections) {
@@ -145,6 +223,32 @@ struct VideoLibraryView: View {
                     Text("Permanently delete \"\(target.title)\" and its \(target.clips.count) extracted clip(s) from this iPhone?")
                 }
             }
+        }
+    }
+
+    // MARK: - Prominent Courtside Import Buttons
+
+    private var importActionsBar: some View {
+        HStack(spacing: 10) {
+            PrimaryCourtButton(
+                "Import Photos",
+                systemImage: "photo.on.rectangle.angled",
+                tint: AppTheme.courtGreen,
+                isDisabled: viewModel.isImportingVideo
+            ) {
+                showPhotosPicker = true
+            }
+            .accessibilityIdentifier("library.importPhotosButton")
+
+            SecondaryCourtButton(
+                "Import Files",
+                systemImage: "folder.badge.plus",
+                tint: AppTheme.hardcourtBlue
+            ) {
+                showFileImporter = true
+            }
+            .disabled(viewModel.isImportingVideo)
+            .accessibilityIdentifier("library.importFilesButton")
         }
     }
 
@@ -289,4 +393,3 @@ struct VideoLibraryView: View {
         }
     }
 }
-
