@@ -54,3 +54,4 @@ If you ever open the GitHub repository on a Mac with Xcode 16+:
 2. Open `TennisProAI.xcodeproj` in Xcode.
 3. Under **Signing & Capabilities**, pick your **Apple ID Personal Team** and change the Bundle Identifier to a unique string (e.g., `com.yourname.tennisproai`).
 4. Connect your **iPhone 16 Pro Max**, select it as the run destination, and press **`Cmd + R`**.
+
